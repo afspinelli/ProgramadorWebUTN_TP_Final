@@ -1,0 +1,32 @@
+<div class="container v-100 d-flex justify-content-center align-items-center">
+    <div class="row" style="margin:200px 0">
+        <div class="col">
+            <form class="" action="/admin/login" method="post">
+                <div class="row v-100 d-flex justify-content-center align-items-center">
+                    <div class="col-auto py-2">
+                        <label for="inputUser" class="visually-hidden">Email</label>
+                        <input type="text" class="form-control" id="inputUser" placeholder="User" name="inputUser">
+                    </div>
+                </div>
+                <div class="row v-100 d-flex justify-content-center align-items-center">
+                    <div class="col-auto py-2">
+                        <label for="inputPassword" class="visually-hidden">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password"
+                            name="inputPassword">
+                    </div>
+                </div>
+                <div class="row v-100 d-flex justify-content-center align-items-center">
+                    <div class="col-auto py-2">
+                        <button type="submit" class="btn btn-primary mb-3">Login</button>
+                    </div>
+                </div>
+                {{#if error}}
+                <p class="row v-100 d-flex justify-content-center align-items-center loguinuser">Incorrect login data!</p>
+                {{/if}}
+                <div class="middletextbox">
+                    <a href="/">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

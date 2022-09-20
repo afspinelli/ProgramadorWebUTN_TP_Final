@@ -1,0 +1,31 @@
+<div class="container v-100 d-flex justify-content-center align-items-center">
+    <div class="row" style="margin:200px 0">
+        <div class="col">
+            <h4 class="loguinok v-100 d-flex justify-content-center align-items-center">Edit tutorial</h4>
+            <form class="" action="/admin/tutorials/edit" method="post">
+            <input type="hidden" name="id" value="{{tutorial.id}}">
+                <div class="row v-100 d-flex justify-content-center align-items-center">
+                    <div class="col-auto py-2">
+                        <input type="text" class="form-control" placeholder="Title" name="title" value="{{tutorial.title}}">
+                    </div>
+                </div>
+                <div class="row v-100 d-flex justify-content-center align-items-center">
+                    <div class="col-auto py-2">
+                        <textarea cols="80" rows="5" type="text" class="form-control" placeholder="Link" name="link">{{tutorial.link}}</textarea>
+                    </div>
+                </div>
+                <div class="row v-100 d-flex justify-content-center align-items-center">
+                    <div class="col-auto py-2">
+                        <button type="submit" class="btn btn-primary mb-3">Save</button>
+                    </div>
+                </div>
+                {{#if error}}
+                <p class="row v-100 d-flex justify-content-center align-items-center loguinuser"> {{message}} </p>
+                {{/if}}
+                <div class="middletextbox">
+                    <a href="./../">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

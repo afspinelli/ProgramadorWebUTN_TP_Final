@@ -1,0 +1,257 @@
+{{!-- {{#if conocido}}
+--}}
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    {{!-- <span class="navbar-brand mb-0 h1 titulo" href="#">Neon City</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"> --}}
+            <div class="container-fluid">
+                <a class="navbar-brand titulo" href="#">Neon City</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header justify-content-end">
+                        {{!-- <h5 class="offcanvas-title titulo" id="offcanvasNavbarLabel">Neon City</h5> --}}
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active smoothScroll" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active smoothScroll" href="#history">History</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active smoothScroll" href="#tutorials">Tutorials</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active smoothScroll" href="#gallery">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active smoothScroll" href="#us">Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active smoothScroll" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"></a>
+                            </li>
+                            {{!-- <li class="nav-item">
+                                <a class="nav-link active middletext" href="/test">Middleware</a>
+                            </li> --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"></a>
+                            </li>
+                            <li class="nav-item loginlink">
+                                <a class="nav-link active" href="/admin/login">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+</nav>
+
+{{!-- <div class="col-2 loguinok">Hi, {{nombre}}</div> --}}
+
+<div class="container-fluid">
+    <div id="home" class="row align-items-center hero">
+        <div class="col-lg-6 offset-lg-2 col-md-6 offset-md-2 col-sm-6 offset-sm-2">
+            <p>Building the city of the future</p>
+            <h1>Neon City</h1>
+            <p>We seek to connect people within a new paradigm, providing the tools responsible for the growth
+                of a
+                new future, full of possibilities, where each human being can develop their best version.</p>
+        </div>
+    </div>
+
+    <div id="history" class="row py-4">
+        <div class="col-md-8 offset-md-2 py-3">
+            <h2>History</h2>
+            <div class="historybox">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ipsum excepturi doloribus
+                    amet
+                    fuga voluptatibus a, quo illum aspernatur culpa, minus atque ducimus nesciunt earum,
+                    laboriosam
+                    magnam corrupti ullam eius?</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur eos quos voluptatibus
+                    repudiandae sint, totam rerum repellat explicabo tempore. Molestiae, in veritatis ipsam quam
+                    voluptatibus officia culpa eaque dolorem delectus!</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, dolorem temporibus
+                    commodi
+                    adipisci nisi modi. Itaque, fuga quod numquam odio deleniti a ducimus facilis modi sed, ut
+                    sapiente? Dolorum, asperiores?</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi accusamus dicta
+                    voluptates,
+                    minima quod odit repellat suscipit, iusto voluptatibus a tempore labore eaque fugiat officia
+                    magni sunt excepturi ea quam.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tutorials" class="row py-4">
+        <div class="col-md-8 offset-md-2 py-3">
+            <h2>Tutorials</h2>
+            <ul class="list-tutorials row">
+                {{#each tutorials}}
+                <li class="col"><a class="embed-youtube" href="javascript:void(0);" data-bs-toggle="modal"
+                        data-bs-target="#tutorialsModal{{id}}">{{title}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        {{#each tutorials}}
+        <div class="modal fade" id="tutorialsModal{{id}}" tabindex="-1" aria-labelledby="tutorialsModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tutorialsModalLabel">{{title}}</h5>
+                    </div>
+                    <div class="modal-body youtube-player" data-id="{{link}}">
+                        {{!-- <iframe allowfullscreen width="100%" height="350" src="{{link}}"></iframe> --}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div id="gallery" class="row py-4">
+        <div class="col-md-8 offset-md-2 py-3">
+            <h2>Gallery</h2>
+            <!-- Add images to <div class="fotorama"></div> -->
+            <div class="fotorama" data-nav="thumbs" data-transition="crossfade" data-autoplay="3000" data-loop="true">
+                <img src="images/gallery01.jpg">
+                <img src="images/gallery02.jpg">
+                <img src="images/gallery03.jpg">
+                <img src="images/gallery04.jpg">
+                <img src="images/gallery05.jpg">
+                <img src="images/gallery06.jpg">
+                <img src="images/gallery07.jpg">
+                <img src="images/gallery08.jpg">
+                <img src="images/gallery09.jpg">
+                <img src="images/gallery10.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div id="us" class="row py-4">
+        <div class="col-md-8 offset-md-2 py-3">
+            <h2>Us</h2>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/us01.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Chloe Walt</h5>
+                            <p class="card-text">CEO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/us02.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Robert Casius</h5>
+                            <p class="card-text">Director VFX</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/us03.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Sofia Hanse</h5>
+                            <p class="card-text">Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="images/us04.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Mark Spencer</h5>
+                            <p class="card-text">Architect</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="row py-4">
+        <div class="col-md-8 offset-md-2 py-3">
+            <h2>Contact</h2>
+            <form class="row g-3" action="/" method="post">
+                <div class="col-md-6 contactformb">
+                    <label for="firstname" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="..." name="firstname">
+                </div>
+                <div class="col-md-6 contactformb">
+                    <label for="lastname" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="..." name="lastname">
+                </div>
+                <div class="col-md-6 contactformb">
+                    <label for="phone" class="form-label">Phone number</label>
+                    <input type="text" class="form-control" id="phone" placeholder="..." name="phone">
+                </div>
+                <div class="col-md-6 contactformb">
+                    <label for="inputCity" class="form-label">City</label>
+                    <input type="text" class="form-control" id="inputCity" placeholder="..." name="inputCity">
+                </div>
+                <div class="col-md-12 contactformb">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                </div>
+                <div class="col-md-12 contactformb">
+                    <label for="message" class="form-label">Leave us your message</label>
+                    <textarea class="form-control" id="message" placeholder="..." rows="4" name="message"></textarea>
+                </div>
+                <div class="col-md-6 contactformb">
+                    <button class="btn btn-primary submitbuttonb" type="submit">Submit form</button>
+                </div>
+                <div class="col-md-6 py-2 messageformb">
+                    {{#if message }}
+                    {{ message }}
+                    {{/if}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p class="text-center">Designed by <a href="mailto:afspinelli@gmail.com">Adrian Spinelli</a> 2022</p>
+</footer>
+
+
+
+
+{{!-- {{/if}}
+
+{{#unless conocido}}
+<h1 class="preloguintitlebox">Welcome to Neon City</h1>
+<div class="loguinbox v-100 d-flex justify-content-center align-items-center">
+    <form action="/ingresar" method="post">
+        <br>
+        <p class="v-100 d-flex justify-content-center align-items-center">Who are you?</p>
+        <input class="v-100 d-flex justify-content-center align-items-center" type="text" name="nombre">
+        <button>Access</button>
+    </form>
+</div>
+{{/unless}} --}}
